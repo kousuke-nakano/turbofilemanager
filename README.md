@@ -73,7 +73,7 @@ If you install ``turbofilemanager`` on a login node of a computation server (i.e
 
 Both ``turbo-filemanager`` and ``turbo-jobmanager`` work *only* in ``file_manager_root`` directory of the localhost.
 
-``turbo-filemanager`` implements ``put`` and ``get`` commands. The commands transfer files from/to the ``localhost`` to/from a specified ``remotehost``. Concerning the destination, ``file_manager_root`` of the ``localhost`` is replaced with that of the ``remotehost``. For instance, suppose you are in ``/Users/xxxxx/yyyyy/zzzzz/kk/ll`` on your ``localhost`` whose ``file_manager_root`` is ``/Users/xxxxx/yyyyy/zzzzz/``. When you transfer the files in the current directory on ``localhost`` to ``nanashi`` whose ``file_manager_root`` is ``/mnt/aaaaa/bbbbb/ccccc`` by the ``put`` command, all the files in ``/Users/xxxxx/yyyyy/zzzzz/kk/ll`` on ``localhost`` will be transfered to ``/mnt/aaaaa/bbbbb/ccccc/kk/ll`` on ``nanashi``.
+``turbo-filemanager`` implements ``put`` and ``get`` commands. The commands transfer files from/to the ``localhost`` to/from a specified ``remotehost``. Concerning the destination, ``file_manager_root`` of the ``localhost`` is replaced with that of the ``remotehost``. For instance, suppose you are in ``/Users/xxxxx/yyyyy/zzzzz/kk/ll`` on your ``localhost`` whose ``file_manager_root`` is ``/Users/xxxxx/yyyyy/zzzzz/``. When you transfer the files in the current directory on ``localhost`` to ``remoteserver`` whose ``file_manager_root`` is ``/mnt/aaaaa/bbbbb/ccccc`` by the ``put`` command, all the files in ``/Users/xxxxx/yyyyy/zzzzz/kk/ll`` on ``localhost`` will be transfered to ``/mnt/aaaaa/bbbbb/ccccc/kk/ll`` on ``remoteserver``.
 
 A remotehost can be specified by ``-s`` option. You can see ``--help``.
 
@@ -82,7 +82,7 @@ A remotehost can be specified by ``-s`` option. You can see ``--help``.
 ## ``turbo-jobmanager`` setup
 Fisrt, you should set up ``turbo-filemanager`` because ``turbo-jobmanager`` uses ``turbo-filemanager`` for its file transfers.
 
-When you run ``turbo-jobmanager`` for the first time, ``turbo-filemanager_config`` directory is created at your home directory. You should edit ``turbofilemanager_config/job_manager_env/machine_name/package.yaml``, ``turbofilemanager_config/job_manager_env/machine_name/submit.sh``, and ``turbofilemanager_config/job_manager_env/machine_name/queue_data.txt``.
+When you run ``turbo-jobmanager`` for the first time, ``turbo-filemanager_config`` directory is created at your home directory. You should edit ``turbofilemanager_config/job_manager_env/{machine_name}/package.yaml``, ``turbofilemanager_config/job_manager_env/{machine_name}/submit.sh``, and ``turbofilemanager_config/job_manager_env/{machine_name}/queue_data.txt``.
 
     #package.yaml
     turborvb:
